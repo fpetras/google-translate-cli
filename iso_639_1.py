@@ -11,7 +11,7 @@ def str_to_iso_639_1(lang):
 		return 'ar'
 	elif (lang.lower() == 'armenian' or lang.lower() == 'hy' or lang.lower() == 'arm' or lang.lower() == 'hye'):
 		return 'hy'
-	elif (lang.lower() == 'azerbaijani' or lang.lower() == 'aze'):
+	elif (lang.lower() == 'azerbaijani' or lang.lower() == 'az' or lang.lower() == 'aze'):
 		return 'az'
 	elif (lang.lower() == 'basque' or lang.lower() == 'eu' or lang.lower() == 'eur' or lang.lower() == 'baq'):
 		return 'eu'

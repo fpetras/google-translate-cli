@@ -52,7 +52,7 @@ def print_language_name(lang):
 		print 'Arabic: ',
 	elif (lang.lower() == 'armenian' or lang.lower() == 'hy' or lang.lower() == 'arm' or lang.lower() == 'hye'):
 		print 'Armenian: ',
-	elif (lang.lower() == 'azerbaijani' or lang.lower() == 'aze'):
+	elif (lang.lower() == 'azerbaijani' or lang.lower() == 'az' or lang.lower() == 'aze'):
 		print 'Azerbaijani: ',
 	elif (lang.lower() == 'basque' or lang.lower() == 'eu' or lang.lower() == 'eur' or lang.lower() == 'baq'):
 		print 'Basque: ',
