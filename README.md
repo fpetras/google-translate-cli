@@ -1,20 +1,21 @@
 # google-translate-cli
-A command-line interface for Google Translate
+A command-line interface for Google Translate, using Python and the Google Cloud Translation API
 
 ## Setup:
 
 ```
+# Install google-cloud-translate:
 sudo pip install --upgrade google-cloud-translate==1.3.1
-# install gcloud
+# Install gcloud:
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 gcloud init
+# Generate credential .json file:
 # go to https://console.cloud.google.com/apis/credentials?project=[PROJECT_ID]
 # or run
 gcloud projects add-iam-policy-binding [PROJECT_ID] --member "serviceAccount:[NAME]@[PROJECT_ID].iam.gserviceaccount.com" --role "roles/owner"
-
 gcloud iam service-accounts keys create [KEY_NAME].json --iam-account [NAME]@[PROJECT_ID].iam.gserviceaccount.com
-
+# Add path to credential .json file to the environment:
 export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
 ```
 
