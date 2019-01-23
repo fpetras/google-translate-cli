@@ -25,39 +25,40 @@ export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
 
 Supported languages:
 
-     Afrikaans      - af   │ Hausa          - ha   │ Norwegian      - no
-     Albanian       - sq   │ Hawaiian       - haw  │ Pashto         - ps
-     Amharic        - am   │ Hebrew         - he   │ Persian        - fa
-     Arabic         - ar   │ Hindi          - hi   │ Polish         - pl
-     Armenian       - hy   │ Hmong          - hmv  │ Portuguese     - pt
-     Azerbaijani    - az   │ Hungarian      - hu   │ Punjabi        - pa
-     Basque         - eu   │ Icelandic      - is   │ Romanian       - ro
-     Belarusian     - be   │ Igbo           - ig   │ Russian        - ru
-     Bengali        - bn   │ Indonesian     - id   │ Samoan         - sm
-     Bosnian        - bs   │ Irish          - ga   │ Scots Gaelic   - gd
-     Bulgarian      - bg   │ Italian        - it   │ Serbian        - sr
-     Catalan        - ca   │ Japanese       - ja   │ Sesotho        - st
-     Cebuano        - ceb  │ Javanese       - jv   │ Shona          - sn
-     Chichewa       - ny   │ Kannada        - kn   │ Sindhi         - sd
-     Chinese        - zh   │ Kazakh         - kk   │ Sinhala        - si
-     Chinese        - zh   │ Khmer          - km   │ Slovak         - sk
-     Corsican       - co   │ Korean         - ko   │ Slovenian      - sl
-     Croatian       - hr   │ Kurdish        - ku   │ Somali         - so
-     Czech          - cs   │ Kyrgyz         - ky   │ Spanish        - es
-     Danish         - da   │ Lao            - lo   │ Sundanese      - su
-     Dutch          - nl   │ Latin          - la   │ Swahili        - sw
-     English        - en   │ Latvian        - lv   │ Swedish        - sv
-     Esperanto      - eo   │ Lithuanian     - lt   │ Tajik          - tg
-     Estonian       - et   │ Luxembourgish  - lb   │ Tamil          - ta
-     Filipino       - fil  │ Macedonian     - mk   │ Telugu         - te
-     Finnish        - fi   │ Malagasy       - mg   │ Thai           - th
-     French         - fr   │ Malay          - ms   │ Turkish        - tr
-     Frisian        - fry  │ Malayalam      - ml   │ Ukrainian      - uk
-     Galician       - gl   │ Maltese        - mt   │ Urdu           - ur
-     Georgian       - ka   │ Maori          - mi   │ Uzbek          - uz
-     German         - de   │ Marathi        - mr   │ Vietnamese     - vi
-     Greek          - el   │ Mongolian      - mn   │ Welsh          - cy
-     Gujarati       - gu   │ Myanmar        - my   │ Xhosa          - xh
-     Haitian Creole - ht   │ Nepali         - ne   │ Yiddisg        - yi
-
+     Afrikaans      - af   │ Hebrew         - he   │ Polish         - pl   
+     Albanian       - sq   │ Hindi          - hi   │ Portuguese     - pt   
+     Amharic        - am   │ Hmong          - hmv  │ Punjabi        - pa   
+     Arabic         - ar   │ Hungarian      - hu   │ Romanian       - ro   
+     Armenian       - hy   │ Icelandic      - is   │ Russian        - ru   
+     Azerbaijani    - az   │ Igbo           - ig   │ Samoan         - sm   
+     Basque         - eu   │ Indonesian     - id   │ Scots Gaelic   - gd   
+     Belarusian     - be   │ Irish          - ga   │ Serbian        - sr   
+     Bengali        - bn   │ Italian        - it   │ Sesotho        - st   
+     Bosnian        - bs   │ Japanese       - ja   │ Shona          - sn   
+     Bulgarian      - bg   │ Javanese       - jv   │ Sindhi         - sd   
+     Catalan        - ca   │ Kannada        - kn   │ Sinhala        - si   
+     Cebuano        - ceb  │ Kazakh         - kk   │ Slovak         - sk   
+     Chichewa       - ny   │ Khmer          - km   │ Slovenian      - sl   
+     Chinese        - zh   │ Korean         - ko   │ Somali         - so   
+     Corsican       - co   │ Kurdish        - ku   │ Spanish        - es   
+     Croatian       - hr   │ Kyrgyz         - ky   │ Sundanese      - su   
+     Czech          - cs   │ Lao            - lo   │ Swahili        - sw   
+     Danish         - da   │ Latin          - la   │ Swedish        - sv   
+     Dutch          - nl   │ Latvian        - lv   │ Tajik          - tg   
+     English        - en   │ Lithuanian     - lt   │ Tamil          - ta   
+     Esperanto      - eo   │ Luxembourgish  - lb   │ Telugu         - te   
+     Estonian       - et   │ Macedonian     - mk   │ Thai           - th   
+     Filipino       - fil  │ Malagasy       - mg   │ Turkish        - tr   
+     Finnish        - fi   │ Malay          - ms   │ Ukrainian      - uk   
+     French         - fr   │ Malayalam      - ml   │ Urdu           - ur   
+     Frisian        - fry  │ Maltese        - mt   │ Uzbek          - uz   
+     Galician       - gl   │ Maori          - mi   │ Vietnamese     - vi   
+     Georgian       - ka   │ Marathi        - mr   │ Welsh          - cy   
+     German         - de   │ Mongolian      - mn   │ Xhosa          - xh   
+     Greek          - el   │ Myanmar        - my   │ Yiddish        - yi   
+     Gujarati       - gu   │ Nepali         - ne   │ Yoruba         - yo   
+     Haitian Creole - ht   │ Norwegian      - no   │ Zulu           - zu   
+     Hausa          - ha   │ Pashto         - ps   │                       
+     Hawaiian       - haw  │ Persian        - fa   │                       
+     
 Both ISO 639-1, 639-2, and the full language name are supported
