@@ -1,45 +1,4 @@
-# -*- coding: utf-8 -*-
 import sys
-
-def print_languages():
-	print('\nSupported languages:'),
-	print('''
-    ┌───────────────────────┬───────────────────────┬───────────────────────┐
-    │ Afrikaans      - af   │ Hausa          - ha   │ Norwegian      - no   │
-    │ Albanian       - sq   │ Hawaiian       - haw  │ Pashto         - ps   │
-    │ Amharic        - am   │ Hebrew         - he   │ Persian        - fa   │
-    │ Arabic         - ar   │ Hindi          - hi   │ Polish         - pl   │
-    │ Armenian       - hy   │ Hmong          - hmv  │ Portuguese     - pt   │
-    │ Azerbaijani    - az   │ Hungarian      - hu   │ Punjabi        - pa   │
-    │ Basque         - eu   │ Icelandic      - is   │ Romanian       - ro   │
-    │ Belarusian     - be   │ Igbo           - ig   │ Russian        - ru   │
-    │ Bengali        - bn   │ Indonesian     - id   │ Samoan         - sm   │
-    │ Bosnian        - bs   │ Irish          - ga   │ Scots Gaelic   - gd   │
-    │ Bulgarian      - bg   │ Italian        - it   │ Serbian        - sr   │
-    │ Catalan        - ca   │ Japanese       - ja   │ Sesotho        - st   │
-    │ Cebuano        - ceb  │ Javanese       - jv   │ Shona          - sn   │
-    │ Chichewa       - ny   │ Kannada        - kn   │ Sindhi         - sd   │
-    │ Chinese        - zh   │ Kazakh         - kk   │ Sinhala        - si   │
-    │ Chinese        - zh   │ Khmer          - km   │ Slovak         - sk   │
-    │ Corsican       - co   │ Korean         - ko   │ Slovenian      - sl   │
-    │ Croatian       - hr   │ Kurdish        - ku   │ Somali         - so   │
-    │ Czech          - cs   │ Kyrgyz         - ky   │ Spanish        - es   │
-    │ Danish         - da   │ Lao            - lo   │ Sundanese      - su   │
-    │ Dutch          - nl   │ Latin          - la   │ Swahili        - sw   │
-    │ English        - en   │ Latvian        - lv   │ Swedish        - sv   │
-    │ Esperanto      - eo   │ Lithuanian     - lt   │ Tajik          - tg   │
-    │ Estonian       - et   │ Luxembourgish  - lb   │ Tamil          - ta   │
-    │ Filipino       - fil  │ Macedonian     - mk   │ Telugu         - te   │
-    │ Finnish        - fi   │ Malagasy       - mg   │ Thai           - th   │
-    │ French         - fr   │ Malay          - ms   │ Turkish        - tr   │
-    │ Frisian        - fry  │ Malayalam      - ml   │ Ukrainian      - uk   │
-    │ Galician       - gl   │ Maltese        - mt   │ Urdu           - ur   │
-    │ Georgian       - ka   │ Maori          - mi   │ Uzbek          - uz   │
-    │ German         - de   │ Marathi        - mr   │ Vietnamese     - vi   │
-    │ Greek          - el   │ Mongolian      - mn   │ Welsh          - cy   │
-    │ Gujarati       - gu   │ Myanmar        - my   │ Xhosa          - xh   │
-    │ Haitian Creole - ht   │ Nepali         - ne   │ Yiddish        - yi   │
-    └───────────────────────┴───────────────────────┴───────────────────────┘''')
 
 def str_to_iso_639_1(lang):
 	if (lang.lower() == 'afrikaans' or lang.lower() == 'af' or lang.lower() == 'afr'):
@@ -97,7 +56,7 @@ def str_to_iso_639_1(lang):
 	elif (lang.lower() == 'frisian' or lang.lower() == 'fry' or lang.lower() == 'frr' or lang.lower() == 'frs'):
 		return 'fry'
 	elif (lang.lower() == 'galician' or lang.lower() == 'gl' or lang.lower() == 'glg'):
-		return ''
+		return 'gl'
 	elif (lang.lower() == 'georgian' or lang.lower() == 'ka' or lang.lower() == 'kat' or lang.lower() == 'geo'):
 		return 'ka'
 	elif (lang.lower() == 'german' or lang.lower() == 'de' or lang.lower() == 'deu' or lang.lower() == 'ger'):
@@ -117,11 +76,11 @@ def str_to_iso_639_1(lang):
 	elif (lang.lower() == 'hindi' or lang.lower() == 'hi' or lang.lower() == 'hin'):
 		return 'hi'
 	elif (lang.lower() == 'hmong' or lang.lower() == 'hmn'):
-		return ''
+		return 'hmn'
 	elif (lang.lower() == 'hungarian' or lang.lower() == 'hu' or lang.lower() == 'hun'):
 		return 'hu'
 	elif (lang.lower() == 'icelandic' or lang.lower() == 'is' or lang.lower() == 'isl' or lang.lower() == 'ice'):
-		return ''
+		return 'is'
 	elif (lang.lower() == 'igbo' or lang.lower() == 'ig' or lang.lower() == 'ibo'):
 		return 'ig'
 	elif (lang.lower() == 'indonesian' or lang.lower() == 'id' or lang.lower() == 'ind'):
