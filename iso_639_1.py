@@ -31,6 +31,8 @@ def str_to_iso_639_1(lang):
 		return 'ny'
 	elif (lang.lower() == 'chinese' or lang.lower() == 'zh' or lang.lower() == 'zho' or lang.lower() == 'chi'):
 		return 'zh'
+	elif (lang.lower() == 'zh-tw'):
+		return 'zh-TW'
 	elif (lang.lower() == 'corsican' or lang.lower() == 'co' or lang.lower() == 'cos'):
 		return 'co'
 	elif (lang.lower() == 'croatian' or lang.lower() == 'hr' or lang.lower() == 'hrw'):
@@ -139,7 +141,7 @@ def str_to_iso_639_1(lang):
 		return 'no'
 	elif (lang.lower() == 'pashto' or lang.lower() == 'ps' or lang.lower() == 'pus'):
 		return 'ps'
-	elif (lang.lower() == 'persian' or lang.lower() == 'fa' or lang.lower() == 'fas' or lang.lower() == 'per'):
+	elif (lang.lower() == 'persian' or lang.lower() == 'farsi' or lang.lower() == 'fa' or lang.lower() == 'fas' or lang.lower() == 'per'):
 		return 'fa'
 	elif (lang.lower() == 'polish' or lang.lower() == 'pl' or lang.lower() == 'pol'):
 		return 'pl'
