@@ -211,4 +211,4 @@ def str_to_iso_639_1(lang):
 		return 'zu'
 	else:
 		print('Language not supported')
-		sys.exit()
+		return 404
