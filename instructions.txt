@@ -1,0 +1,12 @@
+# How to generate credentials .json file:
+# Install gcloud:
+curl https://sdk.cloud.google.com | bash
+exec -l $SHELL
+gcloud init
+# Generate credential .json file by going to
+# https://console.cloud.google.com/apis/credentials?project=[PROJECT_ID]
+# or by running
+gcloud projects add-iam-policy-binding [PROJECT_ID] --member "serviceAccount:[NAME]@[PROJECT_ID].iam.gserviceaccount.com" --role "roles/owner"
+gcloud iam service-accounts keys create [KEY_NAME].json --iam-account [NAME]@[PROJECT_ID].iam.gserviceaccount.com
+
+# rememberto replace [PROJECT_ID] with your project id, [NAME] with your service account name, and [KEY_NAME] with your preferred file name
