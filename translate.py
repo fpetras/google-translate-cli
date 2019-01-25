@@ -3,11 +3,16 @@
 
 import sys
 from google.cloud import translate
+from helpers import credentials, print_usage, valid_lang
 from iso_639_1 import str_to_iso_639_1
 from print_languages import decode, print_languages, print_language_name
 
 def translate_text(text, target_language):
-	client = translate.Client()
+	try:
+		client = translate.Client()
+	except:
+		credentials()
+		sys.exit()
 	try:
 		confidence = client.detect_language(text)
 	except Exception as e:
@@ -45,7 +50,7 @@ def file_translation(argv):
 		else:
 			for l in argv[3:]: # iterate through languages
 				lang = str_to_iso_639_1(l)
-				if lang != 404: # check if language is invalid
+				if valid_lang(lang) == True:
 					translate_text(text, lang)
 		f.close()
 
@@ -55,7 +60,7 @@ def interactive_translation():
 	try:
 		lang = raw_input('Enter target language: ')
 	except: # handles Ctrl-D / Ctrl-C
-		print '' # newline
+		print ''
 		sys.exit()
 	if lang == 'EXIT':
 		sys.exit()
@@ -63,13 +68,13 @@ def interactive_translation():
 	text = ''
 	try:
 		while True:
-			while lang == 404 or text == 'CHANGE':
+			while valid_lang(lang) == False or text == 'CHANGE':
 				text = ''
 				lang = raw_input('Enter target language: ')
 				if lang == 'EXIT':
 					sys.exit()
 				lang = str_to_iso_639_1(lang)
-				if lang != 404:
+				if valid_lang(lang) == True:
 					print('Target language set')
 			text = raw_input('Enter text to translate: ')
 			if text == 'EXIT':
@@ -78,33 +83,25 @@ def interactive_translation():
 				continue
 			translate_text(text, lang)
 	except: # handles Ctrl-D / Ctrl-C
-		print '' # newline
+		print ''
 		sys.exit()
 
-def print_usage():
-	print('''usage: ./translate.py [options] [Input to translate] [target language [...]]
-
-optional arguments:
-  -h, --help  show this help message and exit
-  -f FILE     translate FILE
-  -i          interactive mode''')
-
 def main(argv):
-	if len(sys.argv) < 2 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
+	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
 		print_usage()
 		print_languages()
 		sys.exit()
-	elif len(sys.argv) >= 3 and (sys.argv[1] == '-f' or sys.argv[1] == '--file'):
+	elif len(argv) >= 3 and (argv[1] == '-f' or argv[1] == '--file'):
 		file_translation(sys.argv)
-	elif len(sys.argv) >= 2 and (sys.argv[1] == '-i' or sys.argv[1] == '--interactive'):
+	elif len(argv) >= 2 and (argv[1] == '-i' or argv[1] == '--interactive'):
 		interactive_translation()
-	elif len(sys.argv) == 2:
-		translate_text(sys.argv[1], 'en')
-	elif len(sys.argv) > 2:
-		for l in sys.argv[2:]:
+	elif len(argv) == 2:
+		translate_text(argv[1], 'en')
+	elif len(argv) > 2:
+		for l in argv[2:]:
 			lang = str_to_iso_639_1(l)
-			if lang != 404: # check if language is invalid
-				translate_text(sys.argv[1], lang)
+			if valid_lang(lang) == True:
+				translate_text(argv[1], lang)
 
 if __name__ == "__main__":
 	main(sys.argv)
