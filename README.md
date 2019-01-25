@@ -29,7 +29,7 @@ optional arguments:
   -i          interactive mode
 ```
 
-Supported languages:
+## Supported languages:
 
 
      Afrikaans      - af   │ Hawaiian       - haw  │ Persian        - fa   
@@ -68,5 +68,5 @@ Supported languages:
      Haitian Creole - ht   │ Norwegian      - no   │ Zulu           - zu   
      Hausa          - ha   │ Pashto         - ps   │                       
 
-     
+
 Both ISO 639-1, 639-2, and the full language name are supported

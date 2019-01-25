@@ -24,7 +24,7 @@ def print_languages():
     │ Catalan        - ca   │ Javanese       - jv   │ Sindhi         - sd   │
     │ Cebuano        - ceb  │ Kannada        - kn   │ Sinhala        - si   │
     │ Chichewa       - ny   │ Kazakh         - kk   │ Slovak         - sk   │
-    │ Chinese Simp.  - zh   │ Khmer          - km   │ Slovenian      - sl   │
+    │ Chinese Simp.  - zh-CN│ Khmer          - km   │ Slovenian      - sl   │
     │ Chinese Trad.  - zh-TW│ Korean         - ko   │ Somali         - so   │
     │ Corsican       - co   │ Kurdish        - ku   │ Spanish        - es   │
     │ Croatian       - hr   │ Kyrgyz         - ky   │ Sundanese      - su   │

@@ -50,10 +50,39 @@ def file_translation(argv):
 		f.close()
 
 def interactive_translation():
-	print('WIP')
+	print ('Type CHANGE to change target language')
+	print('Type EXIT to exit')
+	try:
+		lang = raw_input('Enter target language: ')
+	except: # handles Ctrl-D / Ctrl-C
+		print '' # newline
+		sys.exit()
+	if lang == 'EXIT':
+		sys.exit()
+	lang = str_to_iso_639_1(lang)
+	text = ''
+	try:
+		while True:
+			while lang == 404 or text == 'CHANGE':
+				text = ''
+				lang = raw_input('Enter target language: ')
+				if lang == 'EXIT':
+					sys.exit()
+				lang = str_to_iso_639_1(lang)
+				if lang != 404:
+					print('Target language set')
+			text = raw_input('Enter text to translate: ')
+			if text == 'EXIT':
+				sys.exit()
+			if text == 'CHANGE':
+				continue
+			translate_text(text, lang)
+	except: # handles Ctrl-D / Ctrl-C
+		print '' # newline
+		sys.exit()
 
 def print_usage():
-	print('''usage: translate.py [options] [Input to translate] [target language ...]
+	print('''usage: ./translate.py [options] [Input to translate] [target language [...]]
 
 optional arguments:
   -h, --help  show this help message and exit
@@ -76,12 +105,6 @@ def main(argv):
 			lang = str_to_iso_639_1(l)
 			if lang != 404: # check if language is invalid
 				translate_text(sys.argv[1], lang)
-#	if len(sys.argv) != 3:
-#		print('usage: ./translate.py "Text to translate" "Target language"')
-#		print_languages()
-#		sys.exit()
-#	lang = str_to_iso_639_1(sys.argv[2])
-#	translate_text(sys.argv[1], lang)
 
 if __name__ == "__main__":
 	main(sys.argv)
