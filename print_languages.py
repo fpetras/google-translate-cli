@@ -7,45 +7,46 @@ def decode(string):
 	return decode.unescape(string)
 
 def print_languages():
-	print('\nSupported languages:'),
+	print('\nSupported languages: '),
 	print('''
     ┌───────────────────────┬───────────────────────┬───────────────────────┐
     │ Afrikaans      - af   │ Hawaiian       - haw  │ Persian        - fa   │
     │ Albanian       - sq   │ Hebrew         - he   │ Polish         - pl   │
-    │ Amharic        - am   │ Hindi          - hi   │ Portuguese     - pt   │
+    │ Amharic        - am   │ Hindi          - hi   │ Portuguese     - pt  *│
     │ Arabic         - ar   │ Hmong          - hmv  │ Punjabi        - pa   │
     │ Armenian       - hy   │ Hungarian      - hu   │ Romanian       - ro   │
-    │ Azerbaijani    - az   │ Icelandic      - is   │ Russian        - ru   │
+    │ Azerbaijani    - az   │ Icelandic      - is   │ Russian        - ru  *│
     │ Basque         - eu   │ Igbo           - ig   │ Samoan         - sm   │
     │ Belarusian     - be   │ Indonesian     - id   │ Scots Gaelic   - gd   │
     │ Bengali        - bn   │ Irish          - ga   │ Serbian        - sr   │
-    │ Bosnian        - bs   │ Italian        - it   │ Sesotho        - st   │
-    │ Bulgarian      - bg   │ Japanese       - ja   │ Shona          - sn   │
+    │ Bosnian        - bs   │ Italian        - it  *│ Sesotho        - st   │
+    │ Bulgarian      - bg   │ Japanese       - ja  *│ Shona          - sn   │
     │ Catalan        - ca   │ Javanese       - jv   │ Sindhi         - sd   │
     │ Cebuano        - ceb  │ Kannada        - kn   │ Sinhala        - si   │
-    │ Chichewa       - ny   │ Kazakh         - kk   │ Slovak         - sk   │
+    │ Chichewa       - ny   │ Kazakh         - kk   │ Slovak         - sk  *│
     │ Chinese Simp.  - zh-CN│ Khmer          - km   │ Slovenian      - sl   │
-    │ Chinese Trad.  - zh-TW│ Korean         - ko   │ Somali         - so   │
-    │ Corsican       - co   │ Kurdish        - ku   │ Spanish        - es   │
+    │ Chinese Trad.  - zh-TW│ Korean         - ko  *│ Somali         - so   │
+    │ Corsican       - co   │ Kurdish        - ku   │ Spanish        - es  *│
     │ Croatian       - hr   │ Kyrgyz         - ky   │ Sundanese      - su   │
     │ Czech          - cs   │ Lao            - lo   │ Swahili        - sw   │
-    │ Danish         - da   │ Latin          - la   │ Swedish        - sv   │
-    │ Dutch          - nl   │ Latvian        - lv   │ Tajik          - tg   │
-    │ English        - en   │ Lithuanian     - lt   │ Tamil          - ta   │
+    │ Danish         - da  *│ Latin          - la   │ Swedish        - sv  *│
+    │ Dutch          - nl  *│ Latvian        - lv   │ Tajik          - tg   │
+    │ English        - en  *│ Lithuanian     - lt   │ Tamil          - ta   │
     │ Esperanto      - eo   │ Luxembourgish  - lb   │ Telugu         - te   │
     │ Estonian       - et   │ Macedonian     - mk   │ Thai           - th   │
-    │ Filipino       - fil  │ Malagasy       - mg   │ Turkish        - tr   │
+    │ Filipino       - fil  │ Malagasy       - mg   │ Turkish        - tr  *│
     │ Finnish        - fi   │ Malay          - ms   │ Ukrainian      - uk   │
-    │ French         - fr   │ Malayalam      - ml   │ Urdu           - ur   │
+    │ French         - fr  *│ Malayalam      - ml   │ Urdu           - ur   │
     │ Frisian        - fry  │ Maltese        - mt   │ Uzbek          - uz   │
     │ Galician       - gl   │ Maori          - mi   │ Vietnamese     - vi   │
     │ Georgian       - ka   │ Marathi        - mr   │ Welsh          - cy   │
-    │ German         - de   │ Mongolian      - mn   │ Xhosa          - xh   │
+    │ German         - de  *│ Mongolian      - mn   │ Xhosa          - xh   │
     │ Greek          - el   │ Myanmar        - my   │ Yiddish        - yi   │
     │ Gujarati       - gu   │ Nepali         - ne   │ Yoruba         - yo   │
     │ Haitian Creole - ht   │ Norwegian      - no   │ Zulu           - zu   │
     │ Hausa          - ha   │ Pashto         - ps   │                       │
     └───────────────────────┴───────────────────────┴───────────────────────┘''')
+	print('* indicates support for text-to-speech')
 
 def print_language_name(lang):
 	if (lang.lower() == 'afrikaans' or lang.lower() == 'af' or lang.lower() == 'afr'):

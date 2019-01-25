@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import sys
 
-def str_to_iso_639_1(lang):
+def str_to_iso_639_1(lang, interactive):
 	if (lang.lower() == 'afrikaans' or lang.lower() == 'af' or lang.lower() == 'afr'):
 		return 'af'
 	elif (lang.lower() == 'albanian' or lang.lower() == 'sq' or lang.lower() == 'sqi' or lang.lower() == 'alb'):
@@ -210,5 +212,8 @@ def str_to_iso_639_1(lang):
 	elif (lang.lower() == 'zulu' or lang.lower() == 'zu' or lang.lower() == 'zul'):
 		return 'zu'
 	else:
-		print('Language not supported')
+		if interactive == False:
+			print('Language not supported')
+		else:
+			print('✘')
 		return False

@@ -5,14 +5,16 @@ A command-line interface for Google Translate, using Python and the Google Cloud
 
 ```
 # Install google-cloud-translate:
-sudo pip install --upgrade google-cloud-translate
+pip install google-cloud-translate==1.3.1
+pip install google-cloud-texttospeech==0.2.0
+
 # Add path to credential .json file to the environment:
 export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
 # See instructions.txt for how to generate a credentials .json file
 
 # OR alternatively, use 2translate.py, which uses googletrans, a free and unlimited python library that implemented the Google Translate API
 # Install googletrans:
-sudo pip install googletrans
+pip install googletrans
 
 ```
 
@@ -25,6 +27,7 @@ usage: ./translate.py [options] [Input to translate] [target language [...]]
 
 optional arguments:
   -h, --help  show this help message and exit
+  -s          text-to-speech
   -f FILE     translate FILE
   -i          interactive mode
 ```
