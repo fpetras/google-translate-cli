@@ -10,7 +10,7 @@ sudo pip install --upgrade google-cloud-translate
 export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
 # See instructions.txt for how to generate a credentials .json file
 
-# OR alternatively, use translate2.py, which uses googletrans, a free and unlimited python library that implemented the Google Translate API
+# OR alternatively, use 2translate.py, which uses googletrans, a free and unlimited python library that implemented the Google Translate API
 # Install googletrans:
 sudo pip install googletrans
 
