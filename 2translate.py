@@ -4,7 +4,7 @@
 import sys
 from googletrans import Translator
 from helpers import credentials, print_usage, valid_lang
-from iso_639_1 import str_to_iso_639_1
+from iso_639_1 import lang_to_iso
 from print_languages import decode, print_languages, print_language_name
 # from speech import text_to_speech
 
@@ -48,7 +48,7 @@ def file_translation(argv):
 			translate_text(text, 'en')
 		else:
 			for l in argv[3:]: # iterate through languages
-				lang = str_to_iso_639_1(l, False)
+				lang = lang_to_iso(l, False)
 				if valid_lang(lang) == True:
 					translate_text(text, lang)
 		f.close()
@@ -63,7 +63,7 @@ def interactive_translation():
 		sys.exit()
 	if lang == 'EXIT':
 		sys.exit()
-	lang = str_to_iso_639_1(lang, True)
+	lang = lang_to_iso(lang, True)
 	text = ''
 	try:
 		while True:
@@ -72,7 +72,7 @@ def interactive_translation():
 				lang = raw_input('Enter target language: ')
 				if lang == 'EXIT':
 					sys.exit()
-				lang = str_to_iso_639_1(lang, True)
+				lang = lang_to_iso(lang, True)
 				if valid_lang(lang) == True:
 					print('✔︎')
 			text = raw_input('Enter text to translate: ')
@@ -106,7 +106,7 @@ def main(argv):
 		translate_text(argv[1], 'en')
 	elif len(argv) > 2:
 		for l in argv[2:]:
-			lang = str_to_iso_639_1(l, False)
+			lang = lang_to_iso(l, False)
 			if valid_lang(lang) == True:
 				translate_text(argv[1], lang)
 

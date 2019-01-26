@@ -1,8 +1,33 @@
 # -*- coding: utf-8 -*-
 
-import sys
+import signal
+from contextlib import contextmanager
+from spellchecker import SpellChecker
 
-def str_to_iso_639_1(lang, interactive):
+def check_spelling(lang):
+	spell = SpellChecker()
+	corrected = spell.correction(lang)
+	if lang_to_iso(corrected, False, True) != False:
+		print("Did you mean '" + corrected.capitalize() + "'?")
+
+# Timeout function if spellchecker takes too long
+
+class TimeoutException(Exception): pass
+
+@contextmanager
+def time_limit(seconds):
+    def signal_handler(signum, frame):
+        raise TimeoutException("Timed out!")
+    signal.signal(signal.SIGALRM, signal_handler)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+
+# Returns iso_639_1 code, checks spelling in interactive mode
+
+def lang_to_iso(lang, interactive, spell_check):
 	if (lang.lower() == 'afrikaans' or lang.lower() == 'af' or lang.lower() == 'afr'):
 		return 'af'
 	elif (lang.lower() == 'albanian' or lang.lower() == 'sq' or lang.lower() == 'sqi' or lang.lower() == 'alb'):
@@ -31,7 +56,7 @@ def str_to_iso_639_1(lang, interactive):
 		return 'ceb'
 	elif (lang.lower() == 'chichewa' or lang.lower() == 'ny' or lang.lower() == 'nya'):
 		return 'ny'
-	elif (lang.lower() == 'chinese' or lang.lower() == 'zh' or lang.lower() == 'zho' or lang.lower() == 'chi'):
+	elif (lang.lower() == 'chinese' or lang.lower() == 'zh' or lang.lower() == 'zho' or lang.lower() == 'chi' or lang.lower() == 'zh-cn'):
 		return 'zh'
 	elif (lang.lower() == 'zh-tw'):
 		return 'zh-TW'
@@ -212,8 +237,18 @@ def str_to_iso_639_1(lang, interactive):
 	elif (lang.lower() == 'zulu' or lang.lower() == 'zu' or lang.lower() == 'zul'):
 		return 'zu'
 	else:
+		if spell_check == True:
+			return False
 		if interactive == False:
 			print('Language not supported')
 		else:
 			print('✘')
+		try:
+			with time_limit(2):
+				if lang.isalnum() == True:
+					check_spelling(lang.lower())
+		except TimeoutException as e:
+			pass
 		return False
+
+

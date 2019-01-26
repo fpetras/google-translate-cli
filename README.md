@@ -4,9 +4,14 @@ A command-line interface for Google Translate, using Python and the Google Cloud
 ## Setup:
 
 ```
-# Install google-cloud-translate:
+# Install google-cloud-translate and google-cloud-texttospeech:
 pip install google-cloud-translate==1.3.1
 pip install google-cloud-texttospeech==0.2.0
+
+# Install pyspellchecker:
+pip install pyspellchecker
+# in case of error, install from my modified source:
+git clone https://github.com/fpetras/[TODO].git && cd [TODO] && python setup.py install
 
 # Add path to credential .json file to the environment:
 export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
