@@ -2,11 +2,17 @@
 
 import signal
 from contextlib import contextmanager
-from spellchecker import SpellChecker
+try:
+	from spellchecker import SpellChecker
+except:
+	pass
 
 def check_spelling(lang):
-	spell = SpellChecker()
-	corrected = spell.correction(lang)
+	try:
+		spell = SpellChecker()
+		corrected = spell.correction(lang)
+	except:
+		return
 	if lang_to_iso(corrected, False, True) != False:
 		print("Did you mean '" + corrected.capitalize() + "'?")
 
