@@ -8,9 +8,13 @@ from iso_639_1 import str_to_iso_639_1
 from print_languages import decode, print_languages, print_language_name
 from speech import text_to_speech
 
-speak = None
+opt_s = None
+opt_c = None
 
 def translate_text(text, target_language):
+	if len(text) > 10000:
+		print ('Error: Text too large. Maximum: 10000 characters')
+		sys.exit()
 	try:
 		client = translate.Client()
 	except:
@@ -23,13 +27,14 @@ def translate_text(text, target_language):
 		print('Error: '),
 		print(e)
 		sys.exit()
-	print('Detected language confidence: '),
-	print(confidence['confidence'])
+	if opt_c == True:
+		print('Detected language confidence: '),
+		print(confidence['confidence'])
 	print_language_name(result['detectedSourceLanguage'])
 	print(result['input'])
 	print_language_name(target_language)
 	print(decode(result['translatedText']))
-	if speak == True:
+	if opt_s == True:
 		text_to_speech(result['translatedText'], target_language)
 
 def file_translation(argv):
@@ -87,10 +92,14 @@ def interactive_translation():
 		sys.exit()
 
 def main(argv):
-	global speak
+	global opt_s
+	global opt_c
 	if '-s' in argv:
-		speak = True
+		opt_s = True
 		argv.remove('-s')
+	if '-c' in argv:
+		opt_c = True
+		argv.remove('-c')
 	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
 		print_usage()
 		print_languages()

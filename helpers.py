@@ -15,7 +15,8 @@ usage: ./translate.py [options] [Input to translate] [target language [...]]
 
 optional arguments:
   -h, --help  show this help message and exit
-  -s          text-to-speech
+  -c          display detected language confidence level
+  -s          activate text-to-speech
   -f FILE     translate FILE
   -i          interactive mode''')
 
