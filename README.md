@@ -10,7 +10,7 @@ pip install google-cloud-texttospeech==0.2.0
 
 # To enable spell checking in interactive mode, install pyspellchecker:
 pip install pyspellchecker
-# in case of error, install from my modified source:
+# in case of error or if it doesn't work, install from my modified source:
 git clone https://github.com/fpetras/[TODO].git && cd [TODO] && python setup.py install
 
 # Add path to credential .json file to the environment:
@@ -31,11 +31,12 @@ pip install googletrans
 usage: ./translate.py [options] [Input to translate] [target language [...]]
 
 optional arguments:
-  -h, --help  show this help message and exit
-  -c          display detected language confidence level
-  -s          text-to-speech
-  -f FILE     translate FILE
-  -i          interactive mode
+  -h, --help         show this help message and exit
+  -c, --confidence   display detected language confidence level
+  -s, --speech       text-to-speech
+  -f, --file FILE    translate FILE
+  -u, --url          translate web page (opens browser)
+  -i, --interactive  interactive mode
 ```
 
 ## Supported languages:
@@ -43,40 +44,40 @@ optional arguments:
 
      Afrikaans      - af   │ Hawaiian       - haw  │ Persian        - fa   
      Albanian       - sq   │ Hebrew         - he   │ Polish         - pl   
-     Amharic        - am   │ Hindi          - hi   │ Portuguese     - pt 🔉
-     Arabic         - ar   │ Hmong          - hmv  │ Punjabi        - pa   
+     Amharic        - am   │ Hindi          - hi   │ Portuguese     - pt  *
+     Arabic         - ar   │ Hmong          - hmv  │ Punjabi        - pa 
      Armenian       - hy   │ Hungarian      - hu   │ Romanian       - ro   
-     Azerbaijani    - az   │ Icelandic      - is   │ Russian        - ru 🔉
+     Azerbaijani    - az   │ Icelandic      - is   │ Russian        - ru  *
      Basque         - eu   │ Igbo           - ig   │ Samoan         - sm   
      Belarusian     - be   │ Indonesian     - id   │ Scots Gaelic   - gd   
      Bengali        - bn   │ Irish          - ga   │ Serbian        - sr   
-     Bosnian        - bs   │ Italian        - it 🔉│ Sesotho        - st   
-     Bulgarian      - bg   │ Japanese       - ja 🔉│ Shona          - sn   
+     Bosnian        - bs   │ Italian        - it  *│ Sesotho        - st   
+     Bulgarian      - bg   │ Japanese       - ja  *│ Shona          - sn   
      Catalan        - ca   │ Javanese       - jv   │ Sindhi         - sd   
      Cebuano        - ceb  │ Kannada        - kn   │ Sinhala        - si   
-     Chichewa       - ny   │ Kazakh         - kk   │ Slovak         - sk 🔉
+     Chichewa       - ny   │ Kazakh         - kk   │ Slovak         - sk  *
      Chinese Simp.  - zh-CN│ Khmer          - km   │ Slovenian      - sl   
-     Chinese Trad.  - zh-TW│ Korean         - ko 🔉│ Somali         - so   
-     Corsican       - co   │ Kurdish        - ku   │ Spanish        - es 🔉
+     Chinese Trad.  - zh-TW│ Korean         - ko  *│ Somali         - so   
+     Corsican       - co   │ Kurdish        - ku   │ Spanish        - es  *
      Croatian       - hr   │ Kyrgyz         - ky   │ Sundanese      - su   
      Czech          - cs   │ Lao            - lo   │ Swahili        - sw   
-     Danish         - da 🔉│ Latin          - la   │ Swedish        - sv 🔉
-     Dutch          - nl 🔉│ Latvian        - lv   │ Tajik          - tg   
-     English        - en 🔉│ Lithuanian     - lt   │ Tamil          - ta   
+     Danish         - da  *│ Latin          - la   │ Swedish        - sv  *
+     Dutch          - nl  *│ Latvian        - lv   │ Tajik          - tg   
+     English        - en  *│ Lithuanian     - lt   │ Tamil          - ta   
      Esperanto      - eo   │ Luxembourgish  - lb   │ Telugu         - te   
      Estonian       - et   │ Macedonian     - mk   │ Thai           - th   
-     Filipino       - fil  │ Malagasy       - mg   │ Turkish        - tr 🔉
+     Filipino       - fil  │ Malagasy       - mg   │ Turkish        - tr  *
      Finnish        - fi   │ Malay          - ms   │ Ukrainian      - uk   
-     French         - fr 🔉│ Malayalam      - ml   │ Urdu           - ur   
+     French         - fr  *│ Malayalam      - ml   │ Urdu           - ur   
      Frisian        - fry  │ Maltese        - mt   │ Uzbek          - uz   
      Galician       - gl   │ Maori          - mi   │ Vietnamese     - vi   
      Georgian       - ka   │ Marathi        - mr   │ Welsh          - cy   
-     German         - de 🔉│ Mongolian      - mn   │ Xhosa          - xh   
+     German         - de  *│ Mongolian      - mn   │ Xhosa          - xh   
      Greek          - el   │ Myanmar        - my   │ Yiddish        - yi   
      Gujarati       - gu   │ Nepali         - ne   │ Yoruba         - yo   
      Haitian Creole - ht   │ Norwegian      - no   │ Zulu           - zu   
      Hausa          - ha   │ Pashto         - ps   │                       
-🔉 indicates support for text-to-speech
+\* indicates support for text-to-speech
 
 Both ISO 639-1, 639-2, and the full language name are supported
 
