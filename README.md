@@ -35,7 +35,7 @@ optional arguments:
   -c, --confidence   display detected language confidence level
   -s, --speech       text-to-speech
   -f, --file FILE    translate FILE
-  -u, --url          translate web page (opens browser)
+  -u, --url URL      translate web page (opens browser)
   -i, --interactive  interactive mode
 ```
 

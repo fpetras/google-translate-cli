@@ -18,33 +18,33 @@ def print_languages():
     │ Azerbaijani    - az   │ Icelandic      - is   │ Russian        - ru  *│
     │ Basque         - eu   │ Igbo           - ig   │ Samoan         - sm   │
     │ Belarusian     - be   │ Indonesian     - id   │ Scots Gaelic   - gd   │
-    │ Bengali        - bn   │ Irish          - ga   │ Serbian        - sr   │
-    │ Bosnian        - bs   │ Italian        - it  *│ Sesotho        - st   │
-    │ Bulgarian      - bg   │ Japanese       - ja  *│ Shona          - sn   │
-    │ Catalan        - ca   │ Javanese       - jv   │ Sindhi         - sd   │
-    │ Cebuano        - ceb  │ Kannada        - kn   │ Sinhala        - si   │
-    │ Chichewa       - ny   │ Kazakh         - kk   │ Slovak         - sk  *│
-    │ Chinese Simp.  - zh-CN│ Khmer          - km   │ Slovenian      - sl   │
-    │ Chinese Trad.  - zh-TW│ Korean         - ko  *│ Somali         - so   │
-    │ Corsican       - co   │ Kurdish        - ku   │ Spanish        - es  *│
-    │ Croatian       - hr   │ Kyrgyz         - ky   │ Sundanese      - su   │
-    │ Czech          - cs   │ Lao            - lo   │ Swahili        - sw   │
-    │ Danish         - da  *│ Latin          - la   │ Swedish        - sv  *│
-    │ Dutch          - nl  *│ Latvian        - lv   │ Tajik          - tg   │
-    │ English        - en  *│ Lithuanian     - lt   │ Tamil          - ta   │
-    │ Esperanto      - eo   │ Luxembourgish  - lb   │ Telugu         - te   │
-    │ Estonian       - et   │ Macedonian     - mk   │ Thai           - th   │
-    │ Filipino       - fil  │ Malagasy       - mg   │ Turkish        - tr  *│
-    │ Finnish        - fi   │ Malay          - ms   │ Ukrainian      - uk   │
-    │ French         - fr  *│ Malayalam      - ml   │ Urdu           - ur   │
-    │ Frisian        - fry  │ Maltese        - mt   │ Uzbek          - uz   │
-    │ Galician       - gl   │ Maori          - mi   │ Vietnamese     - vi   │
-    │ Georgian       - ka   │ Marathi        - mr   │ Welsh          - cy   │
-    │ German         - de  *│ Mongolian      - mn   │ Xhosa          - xh   │
-    │ Greek          - el   │ Myanmar        - my   │ Yiddish        - yi   │
-    │ Gujarati       - gu   │ Nepali         - ne   │ Yoruba         - yo   │
-    │ Haitian Creole - ht   │ Norwegian      - no   │ Zulu           - zu   │
-    │ Hausa          - ha   │ Pashto         - ps   │                       │
+    │ Bengali        - bn   │ Irish          - ga   │ Serbian Cyril. - sr-CY│
+    │ Bosnian        - bs   │ Italian        - it  *│ Serbian Latin  - sr-LA│
+    │ Bulgarian      - bg   │ Japanese       - ja  *│ Sesotho        - st   │
+    │ Catalan        - ca   │ Javanese       - jv   │ Shona          - sn   │
+    │ Cebuano        - ceb  │ Kannada        - kn   │ Sindhi         - sd   │
+    │ Chichewa       - ny   │ Kazakh         - kk   │ Sinhala        - si   │
+    │ Chinese Simp.  - zh-CN│ Khmer          - km   │ Slovak         - sk  *│
+    │ Chinese Trad.  - zh-TW│ Korean         - ko  *│ Slovenian      - sl   │
+    │ Corsican       - co   │ Kurdish        - ku   │ Somali         - so   │
+    │ Croatian       - hr   │ Kyrgyz         - ky   │ Spanish        - es  *│
+    │ Czech          - cs   │ Lao            - lo   │ Sundanese      - su   │
+    │ Danish         - da  *│ Latin          - la   │ Swahili        - sw   │
+    │ Dutch          - nl  *│ Latvian        - lv   │ Swedish        - sv  *│
+    │ English        - en  *│ Lithuanian     - lt   │ Tajik          - tg   │
+    │ Esperanto      - eo   │ Luxembourgish  - lb   │ Tamil          - ta   │
+    │ Estonian       - et   │ Macedonian     - mk   │ Telugu         - te   │
+    │ Filipino       - fil  │ Malagasy       - mg   │ Thai           - th   │
+    │ Finnish        - fi   │ Malay          - ms   │ Turkish        - tr  *│
+    │ French         - fr  *│ Malayalam      - ml   │ Ukrainian      - uk   │
+    │ Frisian        - fry  │ Maltese        - mt   │ Urdu           - ur   │
+    │ Galician       - gl   │ Maori          - mi   │ Uzbek          - uz   │
+    │ Georgian       - ka   │ Marathi        - mr   │ Vietnamese     - vi   │
+    │ German         - de  *│ Mongolian      - mn   │ Welsh          - cy   │
+    │ Greek          - el   │ Myanmar        - my   │ Xhosa          - xh   │
+    │ Gujarati       - gu   │ Nepali         - ne   │ Yiddish        - yi   │
+    │ Haitian Creole - ht   │ Norwegian      - no   │ Yoruba         - yo   │
+    │ Hausa          - ha   │ Pashto         - ps   │ Zulu           - zu   │
     └───────────────────────┴───────────────────────┴───────────────────────┘''')
 	print('* indicates support for text-to-speech')
 
@@ -205,7 +205,7 @@ def print_language_name(lang):
 		print '🇼🇸  Samoan: ',
 	elif (lang.lower() == 'scots gaelic' or lang.lower() == 'scottish gaelic' or lang.lower() == 'gaelic' or lang.lower() == 'gd' or lang.lower() == 'gla'):
 		print '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scots Gaelic: ',
-	elif (lang.lower() == 'serbian' or lang.lower() == 'sr' or lang.lower() == 'srp'):
+	elif (lang.lower() == 'serbian' or lang.lower() == 'sr' or lang.lower() == 'srp' or lang.lower() == 'sr-latn'):
 		print '🇷🇸  Serbian: ',
 	elif (lang.lower() == 'sesotho' or lang.lower() == 'sotho' or lang.lower() == 'st' or lang.lower() == 'sot'):
 		print '🇱🇸  Sesotho: ',
