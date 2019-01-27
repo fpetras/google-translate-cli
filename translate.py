@@ -3,10 +3,11 @@
 
 import sys
 from google.cloud import translate
-from helpers import credentials, print_usage, valid_lang
+from web_page import web_page_translation
 from language_to_iso import lang_to_iso
-from print_languages import decode, print_languages, print_language_name
 from speech import text_to_speech
+from print_languages import decode, print_languages, print_language_name
+from helpers import credentials, print_usage, valid_lang
 
 opt_s = None
 opt_c = None
@@ -97,15 +98,23 @@ def main(argv):
 	if '-s' in argv:
 		opt_s = True
 		argv.remove('-s')
+	if '--speech' in argv:
+		opt_s = True
+		argv.remove('--speech')
 	if '-c' in argv:
 		opt_c = True
 		argv.remove('-c')
+	if '--confidence' in argv:
+		opt_c = True
+		argv.remove('--confidence')
 	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
 		print_usage()
 		print_languages()
 		sys.exit()
 	elif len(argv) >= 3 and (argv[1] == '-f' or argv[1] == '--file'):
-		file_translation(sys.argv)
+		file_translation(argv)
+	elif len(argv) >= 3 and (argv[1] == '-u' or argv[1] == '--url'):
+		web_page_translation(argv)
 	elif len(argv) >= 2 and (argv[1] == '-i' or argv[1] == '--interactive'):
 		interactive_translation()
 	elif len(argv) == 2:

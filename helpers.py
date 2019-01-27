@@ -14,11 +14,12 @@ def print_usage():
 usage: ./translate.py [options] [Input to translate] [target language [...]]
 
 optional arguments:
-  -h, --help  show this help message and exit
-  -c          display detected language confidence level
-  -s          activate text-to-speech
-  -f FILE     translate FILE
-  -i          interactive mode''')
+  -h, --help         show this help message and exit
+  -c, --confidence   display detected language confidence level
+  -s, --speech       activate text-to-speech
+  -f, --file FILE    translate FILE
+  -u, --url URL      translate web page (opens browser)
+  -i, --interactive  interactive mode''')
 
 def valid_lang(lang):
 	if lang == False:

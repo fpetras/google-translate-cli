@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import signal
-from contextlib import contextmanager
+from timeout import *
 try:
 	from spellchecker import SpellChecker
 except:
@@ -15,21 +14,6 @@ def check_spelling(lang):
 		return
 	if lang_to_iso(corrected, False, True) != False:
 		print("Did you mean '" + corrected.capitalize() + "'?")
-
-# Timeout function if spellchecker takes too long
-
-class TimeoutException(Exception): pass
-
-@contextmanager
-def time_limit(seconds):
-    def signal_handler(signum, frame):
-        raise TimeoutException("Timed out!")
-    signal.signal(signal.SIGALRM, signal_handler)
-    signal.alarm(seconds)
-    try:
-        yield
-    finally:
-        signal.alarm(0)
 
 # Returns iso_639_1 code, checks spelling in interactive mode
 
@@ -253,7 +237,7 @@ def lang_to_iso(lang, interactive, spell_check):
 			with time_limit(2):
 				if lang.isalnum() == True:
 					check_spelling(lang.lower())
-		except TimeoutException as e:
+		except TimeoutException:
 			pass
 		return False
 
