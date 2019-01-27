@@ -12,11 +12,13 @@ def check_spelling(lang):
 		spell = SpellChecker()
 		corrected = spell.correction(lang)
 	except:
-		return
+		return False
 	if lang_to_iso(corrected, False, True) != False:
 		print("Did you mean '" + corrected.capitalize() + "'?")
+		return corrected
+	return False
 
-# Returns iso_639_1 code, checks spelling in interactive mode
+# Returns iso_639_1 code, checks spelling
 
 def lang_to_iso(lang, interactive, spell_check):
 	iso = languages(lang)
@@ -26,13 +28,15 @@ def lang_to_iso(lang, interactive, spell_check):
 		if spell_check == True:
 			return False
 		if interactive == False:
-			print('Language not supported')
+			print("'" + lang + "' is not a valid language")
 		else:
 			print('✘')
 		try:
 			with time_limit(2):
 				if lang.isalnum() == True:
-					check_spelling(lang.lower())
+					corrected = check_spelling(lang.lower())
+					if corrected != False:
+						return languages(corrected)
 		except TimeoutException:
 			pass
 		return False
