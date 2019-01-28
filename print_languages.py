@@ -6,9 +6,10 @@ def decode(string):
 	decode = HTMLParser.HTMLParser()
 	return decode.unescape(string)
 
-def print_languages():
+def print_languages(version):
 	print('\nSupported languages: '),
-	print('''
+	if version == 1:
+		print('''
     ┌───────────────────────┬───────────────────────┬───────────────────────┐
     │ Afrikaans      - af   │ Hawaiian       - haw  │ Persian        - fa   │
     │ Albanian       - sq   │ Hebrew         - he   │ Polish         - pl   │
@@ -37,7 +38,7 @@ def print_languages():
     │ Filipino       - fil  │ Malagasy       - mg   │ Thai           - th   │
     │ Finnish        - fi   │ Malay          - ms   │ Turkish        - tr  *│
     │ French         - fr  *│ Malayalam      - ml   │ Ukrainian      - uk   │
-    │ Frisian        - fry  │ Maltese        - mt   │ Urdu           - ur   │
+    │ Frisian        - fy   │ Maltese        - mt   │ Urdu           - ur   │
     │ Galician       - gl   │ Maori          - mi   │ Uzbek          - uz   │
     │ Georgian       - ka   │ Marathi        - mr   │ Vietnamese     - vi   │
     │ German         - de  *│ Mongolian      - mn   │ Welsh          - cy   │
@@ -46,7 +47,46 @@ def print_languages():
     │ Haitian Creole - ht   │ Norwegian      - no   │ Yoruba         - yo   │
     │ Hausa          - ha   │ Pashto         - ps   │ Zulu           - zu   │
     └───────────────────────┴───────────────────────┴───────────────────────┘''')
-	print('* indicates support for text-to-speech')
+		print('* indicates support for text-to-speech')
+	elif version == 2:
+		print('''
+    ┌───────────────────────┬───────────────────────┬───────────────────────┐
+    │ Afrikaans      - af   │ Hawaiian       - haw  │ Persian        - fa   │
+    │ Albanian       - sq   │ Hebrew         - he   │ Polish         - pl   │
+    │ Amharic        - am   │ Hindi          - hi   │ Portuguese     - pt   │
+    │ Arabic         - ar   │ Hmong          - hmv  │ Punjabi        - pa   │
+    │ Armenian       - hy   │ Hungarian      - hu   │ Romanian       - ro   │
+    │ Azerbaijani    - az   │ Icelandic      - is   │ Russian        - ru   │
+    │ Basque         - eu   │ Igbo           - ig   │ Samoan         - sm   │
+    │ Belarusian     - be   │ Indonesian     - id   │ Scots Gaelic   - gd   │
+    │ Bengali        - bn   │ Irish          - ga   │ Serbian Cyril. - sr-CY│
+    │ Bosnian        - bs   │ Italian        - it   │ Serbian Latin  - sr-LA│
+    │ Bulgarian      - bg   │ Japanese       - ja   │ Sesotho        - st   │
+    │ Catalan        - ca   │ Javanese       - jv   │ Shona          - sn   │
+    │ Cebuano        - ceb  │ Kannada        - kn   │ Sindhi         - sd   │
+    │ Chichewa       - ny   │ Kazakh         - kk   │ Sinhala        - si   │
+    │ Chinese Simp.  - zh-CN│ Khmer          - km   │ Slovak         - sk   │
+    │ Chinese Trad.  - zh-TW│ Korean         - ko   │ Slovenian      - sl   │
+    │ Corsican       - co   │ Kurdish        - ku   │ Somali         - so   │
+    │ Croatian       - hr   │ Kyrgyz         - ky   │ Spanish        - es   │
+    │ Czech          - cs   │ Lao            - lo   │ Sundanese      - su   │
+    │ Danish         - da   │ Latin          - la   │ Swahili        - sw   │
+    │ Dutch          - nl   │ Latvian        - lv   │ Swedish        - sv   │
+    │ English        - en   │ Lithuanian     - lt   │ Tajik          - tg   │
+    │ Esperanto      - eo   │ Luxembourgish  - lb   │ Tamil          - ta   │
+    │ Estonian       - et   │ Macedonian     - mk   │ Telugu         - te   │
+    │ Filipino       - fil  │ Malagasy       - mg   │ Thai           - th   │
+    │ Finnish        - fi   │ Malay          - ms   │ Turkish        - tr   │
+    │ French         - fr   │ Malayalam      - ml   │ Ukrainian      - uk   │
+    │ Frisian        - fy   │ Maltese        - mt   │ Urdu           - ur   │
+    │ Galician       - gl   │ Maori          - mi   │ Uzbek          - uz   │
+    │ Georgian       - ka   │ Marathi        - mr   │ Vietnamese     - vi   │
+    │ German         - de   │ Mongolian      - mn   │ Welsh          - cy   │
+    │ Greek          - el   │ Myanmar        - my   │ Xhosa          - xh   │
+    │ Gujarati       - gu   │ Nepali         - ne   │ Yiddish        - yi   │
+    │ Haitian Creole - ht   │ Norwegian      - no   │ Yoruba         - yo   │
+    │ Hausa          - ha   │ Pashto         - ps   │ Zulu           - zu   │
+    └───────────────────────┴───────────────────────┴───────────────────────┘''')
 
 def print_language_name(lang):
 	if (lang.lower() == 'afrikaans' or lang.lower() == 'af' or lang.lower() == 'afr'):
@@ -103,7 +143,7 @@ def print_language_name(lang):
 		print '🇫🇮  Finnish: ',
 	elif (lang.lower() == 'french' or lang.lower() == 'fr' or lang.lower() == 'fre' or lang.lower() == 'fra'):
 		print '🇫🇷  French: ',
-	elif (lang.lower() == 'frisian' or lang.lower() == 'fry' or lang.lower() == 'frr' or lang.lower() == 'frs'):
+	elif (lang.lower() == 'frisian' or lang.lower() == 'fy' or lang.lower() == 'fry' or lang.lower() == 'frr' or lang.lower() == 'frs'):
 		print '   Frisian: ',
 	elif (lang.lower() == 'galician' or lang.lower() == 'gl' or lang.lower() == 'glg'):
 		print '   Galician: ',

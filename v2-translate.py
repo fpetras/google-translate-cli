@@ -3,12 +3,11 @@
 
 import sys
 from googletrans import Translator
-from helpers import credentials, print_usage, valid_lang
-from iso_639_1 import lang_to_iso
+from language_to_iso import lang_to_iso
+from web_page import web_page_translation
 from print_languages import decode, print_languages, print_language_name
-# from speech import text_to_speech
+from helpers import credentials, print_usage, valid_lang
 
-# opt_s = None
 opt_c = None
 
 def translate_text(text, target_language):
@@ -48,7 +47,7 @@ def file_translation(argv):
 			translate_text(text, 'en')
 		else:
 			for l in argv[3:]: # iterate through languages
-				lang = lang_to_iso(l, False)
+				lang = lang_to_iso(l, False, False)
 				if valid_lang(lang) == True:
 					translate_text(text, lang)
 		f.close()
@@ -63,7 +62,7 @@ def interactive_translation():
 		sys.exit()
 	if lang == 'EXIT':
 		sys.exit()
-	lang = lang_to_iso(lang, True)
+	lang = lang_to_iso(lang, True, False)
 	text = ''
 	try:
 		while True:
@@ -72,7 +71,7 @@ def interactive_translation():
 				lang = raw_input('Enter target language: ')
 				if lang == 'EXIT':
 					sys.exit()
-				lang = lang_to_iso(lang, True)
+				lang = lang_to_iso(lang, True, False)
 				if valid_lang(lang) == True:
 					print('✔︎')
 			text = raw_input('Enter text to translate: ')
@@ -86,27 +85,28 @@ def interactive_translation():
 		sys.exit()
 
 def main(argv):
-#	global opt_s
 	global opt_c
-#	if '-s' in argv:
-#		opt_s = True
-#		argv.remove('-s')
 	if '-c' in argv:
 		opt_c = True
 		argv.remove('-c')
+	if '--confidence' in argv:
+		opt_c = True
+		argv.remove('--confidence')
 	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
-		print_usage()
-		print_languages()
+		print_usage(2)
+		print_languages(2)
 		sys.exit()
 	elif len(argv) >= 3 and (argv[1] == '-f' or argv[1] == '--file'):
-		file_translation(sys.argv)
+		file_translation(argv)
+	elif len(argv) >= 3 and (argv[1] == '-u' or argv[1] == '--url'):
+		web_page_translation(argv)
 	elif len(argv) >= 2 and (argv[1] == '-i' or argv[1] == '--interactive'):
 		interactive_translation()
 	elif len(argv) == 2:
 		translate_text(argv[1], 'en')
 	elif len(argv) > 2:
 		for l in argv[2:]:
-			lang = lang_to_iso(l, False)
+			lang = lang_to_iso(l, False, False)
 			if valid_lang(lang) == True:
 				translate_text(argv[1], lang)
 

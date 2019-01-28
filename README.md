@@ -31,7 +31,7 @@ usage: ./translate.py [options] [Input to translate] [target language [...]]
 optional arguments:
   -h, --help         show this help message and exit
   -c, --confidence   display detected language confidence level
-  -s, --speech       text-to-speech
+  -s, --speech       activate text-to-speech
   -f, --file FILE    translate FILE
   -u, --url URL      translate web page (opens browser)
   -i, --interactive  interactive mode
@@ -67,7 +67,7 @@ optional arguments:
      Filipino       - fil  │ Malagasy       - mg   │ Thai           - th   
      Finnish        - fi   │ Malay          - ms   │ Turkish        - tr  *
      French         - fr  *│ Malayalam      - ml   │ Ukrainian      - uk   
-     Frisian        - fry  │ Maltese        - mt   │ Urdu           - ur   
+     Frisian        - fy   │ Maltese        - mt   │ Urdu           - ur   
      Galician       - gl   │ Maori          - mi   │ Uzbek          - uz   
      Georgian       - ka   │ Marathi        - mr   │ Vietnamese     - vi   
      German         - de  *│ Mongolian      - mn   │ Welsh          - cy   

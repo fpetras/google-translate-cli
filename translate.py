@@ -3,9 +3,9 @@
 
 import sys
 from google.cloud import translate
-from web_page import web_page_translation
 from language_to_iso import lang_to_iso
 from speech import text_to_speech
+from web_page import web_page_translation
 from print_languages import decode, print_languages, print_language_name
 from helpers import credentials, print_usage, valid_lang
 
@@ -108,8 +108,8 @@ def main(argv):
 		opt_c = True
 		argv.remove('--confidence')
 	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
-		print_usage()
-		print_languages()
+		print_usage(1)
+		print_languages(1)
 		sys.exit()
 	elif len(argv) >= 3 and (argv[1] == '-f' or argv[1] == '--file'):
 		file_translation(argv)
