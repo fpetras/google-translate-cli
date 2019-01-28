@@ -13,8 +13,9 @@ def print_usage(version):
 		print('''\
 usage: ./translate.py [options] [Input to translate] [target language [...]]
 
-optional arguments:
+\033[1;37moptional arguments:\033[0;0m
   -h, --help         show this help message and exit
+  -l, --languages    print supported languages and exit
   -c, --confidence   display detected language confidence level
   -s, --speech       activate text-to-speech
   -f, --file FILE    translate FILE
@@ -24,8 +25,9 @@ optional arguments:
 		print('''\
 usage: ./translate.py [options] [Input to translate] [target language [...]]
 
-optional arguments:
+\033[1;37moptional arguments:\033[0;0m
   -h, --help         show this help message and exit
+  -l, --languages    print supported languages and exit
   -c, --confidence   display detected language confidence level
   -f, --file FILE    translate FILE
   -u, --url URL      translate web page (opens browser)

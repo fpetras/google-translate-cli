@@ -53,8 +53,8 @@ def file_translation(argv):
 		f.close()
 
 def interactive_translation():
-	print ('Type CHANGE to change target language')
-	print('Type EXIT to exit')
+	print ('Type \033[1;37mCHANGE\033[0;0m to change target language')
+	print('Type \033[1;37mEXIT\033[0;0m to exit')
 	try:
 		lang = raw_input('Enter target language: ')
 	except: # handles Ctrl-D / Ctrl-C
@@ -73,7 +73,7 @@ def interactive_translation():
 					sys.exit()
 				lang = lang_to_iso(lang, True, False)
 				if valid_lang(lang) == True:
-					print('✔︎')
+					print('\033[1;32m✔︎\033[0;0m')
 			text = raw_input('Enter text to translate: ')
 			if text == 'EXIT':
 				sys.exit()
@@ -94,6 +94,8 @@ def main(argv):
 		argv.remove('--confidence')
 	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
 		print_usage(2)
+		sys.exit()
+	elif len(argv) == 2 and (argv[1] == '-l' or argv[1] == '--languages'):
 		print_languages(2)
 		sys.exit()
 	elif len(argv) >= 3 and (argv[1] == '-f' or argv[1] == '--file'):

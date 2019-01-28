@@ -30,7 +30,7 @@ def lang_to_iso(lang, interactive, spell_check):
 		if interactive == False:
 			print("'" + lang + "' is not a valid language")
 		else:
-			print('✘')
+			print('\033[1;31m✘\033[0;0m')
 		try:
 			with time_limit(2):
 				if lang.isalnum() == True:
