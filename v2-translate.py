@@ -19,18 +19,18 @@ def translate_text(text, target_language):
 		translator = Translator()
 		source = translator.detect(text)
 		translation = translator.translate(text, dest=target_language)
+		if opt_c == True:
+			print('Detected language confidence: '),
+			print(source.confidence)
+		if opt_b != True:
+			print_language_name(source.lang)
+			print(translation.origin)
+			print_language_name(target_language)
+		print(decode(translation.text))
 	except Exception as e:
 		print('Error: '),
 		print(e)
 		sys.exit()
-	if opt_c == True:
-		print('Detected language confidence: '),
-		print(source.confidence)
-	if opt_b != True:
-		print_language_name(source.lang)
-		print(translation.origin)
-		print_language_name(target_language)
-	print(decode(translation.text))
 
 def file_translation(argv):
 	try:

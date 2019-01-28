@@ -1,5 +1,8 @@
 import os
-from google.cloud import texttospeech
+try:
+	from google.cloud import texttospeech
+except:
+	pass
 
 # supported languages: da, de, en, fr, it, ja, ko, nl, pt, ru, sk, sv, tr ,es
 
@@ -15,7 +18,6 @@ def text_to_speech(text, lang):
 		response = client.synthesize_speech(input_text, voice, audio_config)
 	except:
 		return
-
 	try:
 		with open('output-95af1670a84.mp3', 'wb') as out:
 			out.write(response.audio_content)

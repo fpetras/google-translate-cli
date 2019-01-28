@@ -25,20 +25,20 @@ def translate_text(text, target_language):
 	try:
 		confidence = client.detect_language(text)
 		result = client.translate(text, target_language)
+		if opt_c == True:
+			print('Detected language confidence: '),
+			print(confidence['confidence'])
+		if opt_b != True:
+			print_language_name(result['detectedSourceLanguage'])
+			print(result['input'])
+			print_language_name(target_language)
+		print(decode(result['translatedText'])).encode('utf-8')
+		if opt_s == True:
+			text_to_speech(result['translatedText'], target_language)
 	except Exception as e:
 		print('Error: '),
 		print(e)
 		sys.exit()
-	if opt_c == True:
-		print('Detected language confidence: '),
-		print(confidence['confidence'])
-	if opt_b != True:
-		print_language_name(result['detectedSourceLanguage'])
-		print(result['input'])
-		print_language_name(target_language)
-	print(decode(result['translatedText']))
-	if opt_s == True:
-		text_to_speech(result['translatedText'], target_language)
 
 def file_translation(argv):
 	try:
