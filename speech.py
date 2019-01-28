@@ -16,7 +16,10 @@ def text_to_speech(text, lang):
 	except:
 		return
 
-	with open('output.mp3', 'wb') as out:
-		out.write(response.audio_content)
-	os.system('afplay output.mp3')
-	os.system('rm output.mp3')
+	try:
+		with open('output-95af1670a84.mp3', 'wb') as out:
+			out.write(response.audio_content)
+		os.system('afplay output-95af1670a84.mp3')
+		os.system('rm -f output-95af1670a84.mp3')
+	except:
+		print('Error: Audio could not be played')
