@@ -17,7 +17,8 @@ git clone https://github.com/fpetras/[TODO].git && cd [TODO] && python setup.py 
 export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
 # See instructions.txt for how to generate a credentials .json file
 
-# OR alternatively, use 2translate.py, which uses googletrans, a free and unlimited python library that implemented the Google Translate API
+# OR alternatively, use v2-translate.py, which uses the library googletrans
+# (unlimited API calls, but less stable, less functionality, and may stop working at any time)
 # Install googletrans:
 pip install googletrans
 
