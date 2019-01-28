@@ -8,6 +8,7 @@ from web_page import web_page_translation
 from print_languages import decode, print_languages, print_language_name
 from helpers import credentials, print_usage, valid_lang
 
+opt_b = None
 opt_c = None
 
 def translate_text(text, target_language):
@@ -25,9 +26,10 @@ def translate_text(text, target_language):
 	if opt_c == True:
 		print('Detected language confidence: '),
 		print(source.confidence)
-	print_language_name(source.lang)
-	print(translation.origin)
-	print_language_name(target_language)
+	if opt_b != True:
+		print_language_name(source.lang)
+		print(translation.origin)
+		print_language_name(target_language)
 	print(decode(translation.text))
 
 def file_translation(argv):
@@ -85,7 +87,14 @@ def interactive_translation():
 		sys.exit()
 
 def main(argv):
+	global opt_b
 	global opt_c
+	if '-b' in argv:
+		opt_b = True
+		argv.remove('-b')
+	if '--bare' in argv:
+		opt_b = True
+		argv.remove('--bare')
 	if '-c' in argv:
 		opt_c = True
 		argv.remove('-c')

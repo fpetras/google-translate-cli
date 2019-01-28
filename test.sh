@@ -8,6 +8,8 @@ set -x
 ./translate.py -f /dev/urandom es pt
 ./translate.py -c -s -f test NaL ja
 ./translate.py -s "Dieser Test scheint bisher gut gelaufen zu sein" en
+./translate.py -b "Testing bare output" ice
+./translate.py "Testing bare output again" German --bare
 ./translate.py "Testing spell checking" englsh geman portugiese
 ./translate.py -c "native language names" ქართული ייִדיש ລາວ 한국어 Slovenščina
 ./translate.py --url news.ycombinator.com Français

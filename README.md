@@ -32,6 +32,7 @@ usage: ./translate.py [options] [Input to translate] [target language [...]]
 optional arguments:
   -h, --help         show this help message and exit
   -l, --language     print supported languages and exit
+  -b, --bare         output the bare translation
   -c, --confidence   display detected language confidence level
   -s, --speech       activate text-to-speech
   -f, --file FILE    translate FILE
