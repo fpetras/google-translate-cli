@@ -106,7 +106,7 @@ def print_language_name(lang):
 	elif (lang.lower() == 'belarusian' or lang.lower() == 'be' or lang.lower() == 'bel'):
 		print '🇧🇾  Belarusian: ',
 	elif (lang.lower() == 'bengali' or lang.lower() == 'bn' or lang.lower() == 'ben'):
-		print '🇧🇩  Bengali:'
+		print '🇧🇩  Bengali:',
 	elif (lang.lower() == 'bosnian' or lang.lower() == 'bs' or lang.lower() == 'bos'):
 		print '🇧🇦  Bosnian: ',
 	elif (lang.lower() == 'bulgarian' or lang.lower() == 'bg' or lang.lower() == 'bul'):

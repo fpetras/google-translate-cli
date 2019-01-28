@@ -12,4 +12,5 @@ set -x
 ./v2-translate.py "Testing bare output again" German --bare
 ./v2-translate.py "Testing spell checking" englsh geman portugiese
 ./v2-translate.py -c "Native language names" ქართული ייִדיש ລາວ 한국어 Slovenčina
+./v2-translate.py "Randomness" rng rng rng rng
 ./v2-translate.py --url news.ycombinator.com Français

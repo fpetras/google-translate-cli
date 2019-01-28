@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from rng import random_language
+
 def languages(lang):
 	if (lang.lower() == 'afrikaans' or lang.lower() == 'af' or lang.lower() == 'afr'):
 		return 'af'
@@ -211,5 +213,7 @@ def languages(lang):
 		return 'yo'
 	elif (lang.lower() == 'zulu' or lang.lower() == 'isizulu' or lang.lower() == 'zu' or lang.lower() == 'zul'):
 		return 'zu'
+	elif (lang.lower() == 'random' or lang.lower() == 'rng'):
+		return random_language()
 	else:
 		return False
