@@ -107,7 +107,7 @@ def main(argv):
 		opt_c = True
 		argv.remove('--confidence')
 	if len(argv) < 2 or argv[1] == '-h' or argv[1] == '--help':
-		print_usage(2)
+		print_usage(2, argv[0])
 		sys.exit()
 	elif len(argv) == 2 and (argv[1] == '-l' or argv[1] == '--languages'):
 		print_languages(2)

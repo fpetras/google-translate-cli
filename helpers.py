@@ -8,10 +8,10 @@ def credentials():
 │   Or use the other version that doesn't need it      │
 └──────────────────────────────────────────────────────┘''')
     	
-def print_usage(version):
+def print_usage(version, name):
 	if version == 1:
 		print('''\
-usage: ./translate.py [options] [Input to translate] [target language [...]]
+usage: ''' + name + ''' [options] [Input to translate] [target language [...]]
 
 \033[1;37moptional arguments:\033[0;0m
   -h, --help         show this help message and exit
@@ -24,7 +24,7 @@ usage: ./translate.py [options] [Input to translate] [target language [...]]
   -i, --interactive  interactive mode''')
 	elif version == 2:
 		print('''\
-usage: ./translate.py [options] [Input to translate] [target language [...]]
+usage: ''' + name + ''' [options] [Input to translate] [target language [...]]
 
 \033[1;37moptional arguments:\033[0;0m
   -h, --help         show this help message and exit

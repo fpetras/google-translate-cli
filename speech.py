@@ -6,7 +6,7 @@ try:
 except:
 	pass
 
-# supported languages: da, de, en, fr, it, ja, ko, nl, pt, ru, sk, sv, tr ,es
+# supported languages: da, de, en, fr, it, ja, ko, nl, pt, ru, sk, sv, tr, es
 
 def text_to_speech(text, lang):
 	try:
