@@ -43,7 +43,7 @@ optional arguments:
 
 ![gt-cli-gif-1](http://g.recordit.co/9NPmIu7osc.gif)
 
-![gt-cli-gif-2](http://g.recordit.co/13zIXStr03.gif)
+![gt-cli-gif-2](http://g.recordit.co/8oO2ZdQhTu.gif)
 
 ![gt-cli-gif-3](http://g.recordit.co/VFGu9RYOmc.gif)
 
