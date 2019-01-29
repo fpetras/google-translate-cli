@@ -41,6 +41,57 @@ optional arguments:
 
 ## Examples:
 
+Supports ISO 639-1, 639-2, English and native language names
+
+English language name entries are spell-checked and autocorrected
+
+### Translate a word
+##### into Italian:
+
+`$> ./translate.py world it`
+
+```
+🇬🇧  English:  world
+🇮🇹  Italian:  mondo
+```
+
+### Translate a sentence
+##### into Armenian:
+
+`$> ./translate.py 'Hello, World!' Armenian`
+
+```
+🇬🇧  English:  Hello, world!
+🇦🇲  Armenian:  Բարեւ աշխարհ!
+```
+
+### Translate a file
+##### into Spanish:
+
+`$> ./translate.py -f cosmos.txt Español`
+
+```
+🇬🇧  English:  We are a way for the cosmos to know itself
+🇪🇸  Spanish:  Somos una manera para que el cosmos se conozca.
+```
+
+### Listen to a translation
+##### in Japanese:
+
+`$> ./translate.py -s "cherry blossom" 日本語`
+
+```
+🇬🇧  English:  cherry blossom
+🇯🇵  Japanese:  桜の花
+🔉
+```
+### Translate a web page
+##### into a random language:
+
+`$> ./translate.py --url github.com/fpetras rng`
+
+## In action:
+
 ![gt-cli-gif-1](http://g.recordit.co/9NPmIu7osc.gif)
 
 ![gt-cli-gif-2](http://g.recordit.co/8oO2ZdQhTu.gif)
@@ -87,7 +138,3 @@ optional arguments:
      Hausa          - ha   │ Pashto         - ps   │ Zulu           - zu   
 
 \* indicates support for text-to-speech
-
-Supports ISO 639-1, 639-2, English and native language names
-
-English language name entries are spell-checked and autocorrected
