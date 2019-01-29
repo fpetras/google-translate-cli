@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 try:
 	from google.cloud import texttospeech
@@ -19,6 +21,7 @@ def text_to_speech(text, lang):
 	except:
 		return
 	try:
+		print('🔉')
 		with open('output-95af1670a84.mp3', 'wb') as out:
 			out.write(response.audio_content)
 		os.system('afplay output-95af1670a84.mp3')

@@ -117,7 +117,7 @@ def print_language_name(lang):
 		print '   Cebuano: ',
 	elif (lang.lower() == 'chichewa' or lang.lower() == 'ny' or lang.lower() == 'nya'):
 		print '🇲🇼 🇿🇼  Chichewa: ',
-	elif (lang.lower() == 'chinese' or lang.lower() == 'zh' or lang.lower() == 'zho' or lang.lower() == 'chi'):
+	elif (lang.lower() == 'chinese' or lang.lower() == 'zh' or lang.lower() == 'zh-cn' or lang.lower() == 'zho' or lang.lower() == 'chi'):
 		print '🇨🇳  Chinese: ',
 	elif (lang.lower() == 'zh-tw'):
 		print '🇨🇳  Chinese (Traditional): ',
