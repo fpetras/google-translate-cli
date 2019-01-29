@@ -25,3 +25,4 @@ def text_to_speech(text, lang):
 		os.system('rm -f output-95af1670a84.mp3')
 	except:
 		print('Error: Audio could not be played')
+		os.system('rm =f output-95af1670a84.mp3')

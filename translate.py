@@ -29,8 +29,9 @@ def translate_text(text, target_language):
 			print('Detected language confidence: '),
 			print(confidence['confidence'])
 		if opt_b != True:
-			print_language_name(result['detectedSourceLanguage'])
-			print(result['input'])
+			if result['detectedSourceLanguage'] != target_language:
+				print_language_name(result['detectedSourceLanguage'])
+				print(result['input'])
 			print_language_name(target_language)
 		print(decode(result['translatedText'])).encode('utf-8')
 		if opt_s == True:
@@ -73,6 +74,8 @@ def interactive_translation():
 	if lang == 'EXIT':
 		sys.exit()
 	lang = lang_to_iso(lang, True, False)
+	if valid_lang(lang) == True:
+		print('\033[1;32m✔︎\033[0;0m')
 	text = ''
 	try:
 		while True:

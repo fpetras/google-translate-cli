@@ -137,7 +137,7 @@ def print_language_name(lang):
 		print '   Esperanto: ',
 	elif (lang.lower() == 'estonian' or lang.lower() == 'et' or lang.lower() == 'est'):
 		print '🇪🇪  Estonian: ',
-	elif (lang.lower() == 'filipino' or lang.lower() == 'fil'):
+	elif (lang.lower() == 'filipino' or lang.lower() == 'tl' or lang.lower() == 'fil'):
 		print '🇵🇭  Filipino: ',
 	elif (lang.lower() == 'finnish' or lang.lower() == 'fi' or lang.lower() == 'fin'):
 		print '🇫🇮  Finnish: ',
