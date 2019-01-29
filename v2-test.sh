@@ -3,6 +3,7 @@
 set -x
 ./v2-translate.py "This is a simple text" fr
 ./v2-translate.py "Übersetze mich"
+./v2-translate.py "Don't translate me"
 ./v2-translate.py -c "This test is going well so far" de -s
 ./v2-translate.py  "Many different languages" fr japanese et zh-CN zulu Amharic
 ./v2-translate.py -f /dev/urandom es pt

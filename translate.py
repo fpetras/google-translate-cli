@@ -54,6 +54,8 @@ def file_translation(argv):
 				print ('Error: File too large. Maximum: 10000 characters')
 				f.close()
 				sys.exit()
+			if text[-1] == '\n': # if last char is \n
+				text = text[:-1] # remove it
 		if len(argv) == 3: # if no language is given, default to English
 			translate_text(text, 'en')
 		else:
