@@ -36,6 +36,19 @@ Install googletrans:
 
 `pip install googletrans`
 
+---
+
+### Step #4 (optional):
+
+Create a stand-alone executable:
+
+```
+pip install pyinstaller
+pyinstaller --onefile translate.py
+```
+
+The executable will be located in the newly created *dist* subdirectory
+
 ## Usage:
 
 ```
