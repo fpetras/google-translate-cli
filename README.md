@@ -3,25 +3,38 @@ A command-line interface for Google Translate, using Python and the Google Cloud
 
 ## Setup:
 
-```
-# Install requirements:
-pip install -r requirements.txt
+### Step #1:
 
-# To enable language name spell checking and autocorrection, install pyspellchecker:
-pip install pyspellchecker
-# in case of error or nonfunctioning, install from my modified source:
-git clone https://github.com/fpetras/pyspellchecker.git && cd pyspellchecker && python setup.py install
+Install requirements:
 
-# Add path to credential .json file to the environment:
-export GOOGLE_APPLICATION_CREDENTIALS=[PATH]
-# See instructions.txt on how to generate a credentials .json file
+`pip install -r requirements.txt`
 
-# OR alternatively, use v2-translate.py, which uses the library googletrans
-# (unlimited API calls, but less stable, less functionality, and may stop working at any time)
-# Install googletrans:
-pip install googletrans
+### Step #2:
 
-```
+To enable language name spell checking and autocorrection, install pyspellchecker:
+
+`pip install pyspellchecker`
+
+in case of error or nonfunctioning, install from my modified source:
+
+`git clone https://github.com/fpetras/pyspellchecker.git && cd pyspellchecker && python setup.py install`
+
+### Step #3:
+
+Add path to credential .json file to the environment:
+
+`export GOOGLE_APPLICATION_CREDENTIALS=[PATH]`
+
+See instructions.txt on how to generate a credentials .json file
+
+---
+
+Alternatively, use v2-translate.py, which uses the library googletrans
+(unlimited API calls, but less stable, less functionality, and may stop working at any time)
+
+Install googletrans:
+
+`pip install googletrans`
 
 ## Usage:
 
@@ -100,7 +113,6 @@ English language name entries are spell-checked and autocorrected
 
 ## Supported languages:
 
-
      Afrikaans      - af   │ Hawaiian       - haw  │ Persian        - fa   
      Albanian       - sq   │ Hebrew         - he   │ Polish         - pl   
      Amharic        - am   │ Hindi          - hi   │ Portuguese     - pt  *
@@ -136,5 +148,5 @@ English language name entries are spell-checked and autocorrected
      Gujarati       - gu   │ Nepali         - ne   │ Yiddish        - yi   
      Haitian Creole - ht   │ Norwegian      - no   │ Yoruba         - yo   
      Hausa          - ha   │ Pashto         - ps   │ Zulu           - zu   
-
+     
 \* indicates support for text-to-speech
