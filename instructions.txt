@@ -9,4 +9,4 @@ gcloud init
 gcloud projects add-iam-policy-binding [PROJECT_ID] --member "serviceAccount:[NAME]@[PROJECT_ID].iam.gserviceaccount.com" --role "roles/owner"
 gcloud iam service-accounts keys create [KEY_NAME].json --iam-account [NAME]@[PROJECT_ID].iam.gserviceaccount.com
 
-# rememberto replace [PROJECT_ID] with your project id, [NAME] with your service account name, and [KEY_NAME] with your preferred file name
+# remember to replace [PROJECT_ID] with your project id, [NAME] with your service account name, and [KEY_NAME] with your preferred file name

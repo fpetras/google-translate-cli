@@ -15,7 +15,7 @@ To enable language name spell checking and autocorrection, install pyspellchecke
 
 `pip install pyspellchecker`
 
-in case of error or nonfunctioning, install from my modified source:
+In case of error or nonfunctioning, install from my modified source:
 
 `git clone https://github.com/fpetras/pyspellchecker.git && cd pyspellchecker && python setup.py install`
 
@@ -149,4 +149,4 @@ English language name entries are spell-checked and autocorrected
      Haitian Creole - ht   │ Norwegian      - no   │ Yoruba         - yo   
      Hausa          - ha   │ Pashto         - ps   │ Zulu           - zu   
      
-\* indicates support for text-to-speech
+\* supports text-to-speech
