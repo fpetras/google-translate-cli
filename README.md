@@ -114,6 +114,10 @@ English language name entries are spell-checked and autocorrected
 
 `$> ./translate.py --url github.com/fpetras rng`
 
+### Enter interactive mode:
+
+`$> ./translate.py -i`
+
 ## In action:
 
 ![gt-cli-gif-1](http://g.recordit.co/9NPmIu7osc.gif)
