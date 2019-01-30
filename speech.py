@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from print_languages import decode
 try:
 	from google.cloud import texttospeech
 except:
@@ -10,6 +11,7 @@ except:
 
 def text_to_speech(text, lang):
 	try:
+		text = decode(text)
 		client = texttospeech.TextToSpeechClient()
 		input_text = texttospeech.types.SynthesisInput(text=text)
 		voice = texttospeech.types.VoiceSelectionParams(language_code=lang,
