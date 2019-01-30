@@ -29,7 +29,7 @@ See instructions.txt on how to generate a credentials .json file
 
 ---
 
-Alternatively, use v2-translate.py, which uses the library googletrans
+Alternatively, use `v2-translate.py`, which uses the library googletrans
 (unlimited API calls, but less stable, less functionality, and may stop working at any time)
 
 `pip install googletrans`
