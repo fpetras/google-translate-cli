@@ -32,10 +32,6 @@ See instructions.txt on how to generate a credentials .json file
 Alternatively, use v2-translate.py, which uses the library googletrans
 (unlimited API calls, but less stable, less functionality, and may stop working at any time)
 
-Install googletrans:
-
-`pip install googletrans`
-
 ---
 
 ### Step #4 (optional):
