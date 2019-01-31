@@ -10,4 +10,4 @@ def random_language():
 		'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk',
 		'sl', 'so', 'es', 'su', 'sw', 'sv', 'tg', 'ta', 'te', 'th', 'tr', 'uk',
 		'ur', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo', 'zu']
-	return langs[random.randint(0, 102)]
+	return langs[random.randint(0, len(langs) - 1)]
