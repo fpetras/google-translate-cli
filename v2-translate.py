@@ -21,7 +21,7 @@ def translate_text(text, target_language):
 		translation = translator.translate(text, dest=target_language)
 		if opt_c == True:
 			print('Detected language confidence: '),
-			print(source.confidence)
+			print('{:.2%}'.format(source.confidence)) # convert to %
 		if opt_b != True:
 			if source.lang != target_language:
 				print_language_name(source.lang)
