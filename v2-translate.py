@@ -1,12 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys
 from googletrans import Translator
 from language_to_iso import lang_to_iso
 from web_page import web_page_translation
-from print_languages import decode, print_languages, print_language_name
-from helpers import credentials, print_usage, valid_lang
+from print_languages import print_languages, print_language_name
+from helpers import decode, valid_lang, credentials, print_usage
 
 opt_b = None
 opt_c = None
@@ -41,7 +41,12 @@ def file_translation(argv):
 		sys.exit()
 	else:
 		if f.mode == 'r':
-			text = f.read(10000)
+			try:
+				text = f.read(10000)
+			except UnicodeDecodeError:
+				print('Error: Unsupported characters')
+				f.close()
+				sys.exit()
 			if len(text) >= 10000:
 				print ('Error: File too large. Maximum: 10000 characters')
 				f.close()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys
@@ -6,8 +6,8 @@ from google.cloud import translate
 from language_to_iso import lang_to_iso
 from speech import text_to_speech
 from web_page import web_page_translation
-from print_languages import decode, print_languages, print_language_name
-from helpers import credentials, print_usage, valid_lang
+from print_languages import print_languages, print_language_name
+from helpers import decode, valid_lang, credentials, print_usage
 
 opt_b = None
 opt_s = None
@@ -33,7 +33,10 @@ def translate_text(text, target_language):
 				print_language_name(result['detectedSourceLanguage'])
 				print(result['input'])
 			print_language_name(target_language)
-		print(decode(result['translatedText'])).encode('utf-8')
+		if sys.version_info >= (3, 0): # if python versino > 3
+			print(decode(result['translatedText']))
+		else:
+			print(decode(result['translatedText'])).encode('utf-8')
 		if opt_s == True:
 			text_to_speech(result['translatedText'], target_language)
 	except Exception as e:
@@ -49,7 +52,12 @@ def file_translation(argv):
 		sys.exit()
 	else:
 		if f.mode == 'r':
-			text = f.read(10000)
+			try:
+				text = f.read(10000)
+			except UnicodeDecodeError:
+				print('Error: Unsupported characters')
+				f.close()
+				sys.exit()
 			if len(text) >= 10000:
 				print ('Error: File too large. Maximum: 10000 characters')
 				f.close()

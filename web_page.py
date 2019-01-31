@@ -1,6 +1,11 @@
 import os
 import sys
-import urllib2
+try:
+	from urllib.request import urlopen
+	import ssl
+	ssl._create_default_https_context = ssl._create_unverified_context
+except ImportError:
+	from urllib2 import urlopen
 from timeout import *
 from language_to_iso import lang_to_iso
 from helpers import valid_lang
@@ -14,14 +19,15 @@ def web_page_translation(argv):
 		url = 'https://' + url
 	try:
 		with time_limit(5):
-			urllib2.urlopen(url)
+			urlopen(url)
 	except KeyboardInterrupt:
 		print('')
 		sys.exit()
 	except TimeoutException:
 		print('Error: Timeout')
 		sys.exit()
-	except:
+	except Exception as e:
+		print(e)
 		print('Error: Web site could not be reached')
 		sys.exit()
 	if len(argv) > 3:

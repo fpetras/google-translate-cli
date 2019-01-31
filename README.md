@@ -1,23 +1,33 @@
 # google-translate-cli
 A command-line interface for Google Translate, using Python and the Google Cloud Translation API
 
+Compatible with Python 2 and Python 3 (tested on 2.7 and 3.6)
+
 ## Setup:
 
 ### Step #1:
 
 Install requirements:
 
+Python 2:
+
 `pip install -r requirements.txt`
+
+Python 3:
+
+`pip3 install -r requirements.txt`
 
 ### Step #2:
 
 To enable language name spell checking and autocorrection, install pyspellchecker:
 
-`pip install pyspellchecker`
-
-In case of error or nonfunctioning, install from my modified source:
+Python 2:
 
 `git clone https://github.com/fpetras/pyspellchecker.git && cd pyspellchecker && python setup.py install`
+
+Python 3:
+
+`pip3 install pyspellchecker`
 
 ### Step #3:
 
@@ -32,7 +42,13 @@ See instructions.txt on how to generate a credentials .json file
 Alternatively, use `v2-translate.py`, which uses the library googletrans
 (unlimited API calls, but less stable, less functionality, and may stop working at any time)
 
+Python 2:
+
 `pip install googletrans`
+
+Python 3:
+
+`pip3 install googletrans`
 
 ---
 
@@ -40,8 +56,17 @@ Alternatively, use `v2-translate.py`, which uses the library googletrans
 
 Create a stand-alone executable:
 
+Python 2:
+
 ```
 pip install pyinstaller
+pyinstaller --onefile translate.py
+```
+
+Python 3:
+
+```
+pip3 install pyinstaller
 pyinstaller --onefile translate.py
 ```
 
