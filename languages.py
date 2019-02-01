@@ -34,7 +34,7 @@ def languages(lang):
 		elif (lang.lower() == 'chichewa' or lang.lower() == 'nyanja' or lang.lower() == 'ny' or lang.lower() == 'nya'):
 			return 'ny'
 		elif (lang.lower() == 'chinese' or lang == u'简体中文' or lang.lower() == 'zh' or lang.lower() == 'zho' or lang.lower() == 'chi' or lang.lower() == 'zh-cn'):
-			return 'zh'
+			return 'zh-CN'
 		elif (lang.lower() == 'zh-tw' or lang == u'正體中文'):
 			return 'zh-TW'
 		elif (lang.lower() == 'corsican' or lang.lower() == 'corsu' or lang.lower() == 'co' or lang.lower() == 'cos'):
