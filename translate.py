@@ -33,7 +33,7 @@ def translate_text(text, target_language):
 				print_language_name(result['detectedSourceLanguage'])
 				print(result['input'])
 			print_language_name(target_language)
-		if sys.version_info >= (3, 0): # if python versino > 3
+		if sys.version_info >= (3, 0): # if python version > 3
 			print(decode(result['translatedText']))
 		else:
 			print(decode(result['translatedText'])).encode('utf-8')
