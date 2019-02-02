@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import HTMLParser
-
-def decode(string):
-	decode = HTMLParser.HTMLParser()
-	return decode.unescape(string)
-
 def print_languages(version):
 	print('\nSupported languages: '),
 	if version == 1:

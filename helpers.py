@@ -1,5 +1,16 @@
 # -*- coding: utf-8 -*-
 
+import HTMLParser
+
+def decode(string):
+	decode = HTMLParser.HTMLParser()
+	return decode.unescape(string)
+
+def valid_lang(lang):
+	if lang == False:
+		return False
+	return True
+
 def credentials():
 	print('''\
 ┌──────────────────────────────────────────────────────┐
@@ -34,8 +45,3 @@ usage: ''' + name + ''' [options] [Input to translate] [target language [...]]
   -f, --file FILE    translate FILE
   -u, --url URL      translate web page (opens browser)
   -i, --interactive  interactive mode''')
-
-def valid_lang(lang):
-	if lang == False:
-		return False
-	return True

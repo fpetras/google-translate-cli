@@ -6,8 +6,8 @@ from google.cloud import translate
 from language_to_iso import lang_to_iso
 from speech import text_to_speech
 from web_page import web_page_translation
-from print_languages import decode, print_languages, print_language_name
-from helpers import credentials, print_usage, valid_lang
+from print_languages import print_languages, print_language_name
+from helpers import decode, valid_lang, credentials, print_usage
 
 opt_b = None
 opt_s = None
