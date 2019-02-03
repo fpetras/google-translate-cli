@@ -1,11 +1,17 @@
-# How to generate credentials .json file:
-# Install gcloud:
+open https://cloud.google.com/translate/docs/quickstart
+# Sign in to your Google-Account
+# Set up a GCP Console project.
+#	- Create or select a project
+#	- Enable the Cloud Translation API for that project
+#	- Create a service account
+# Install and initialize gcloud:
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 gcloud init
-# Generate credential .json file by going to
-# https://console.cloud.google.com/apis/credentials?project=[PROJECT_ID]
-# or by running
+# Generate the credential .json file:
+# Option #1:
+open https://console.cloud.google.com/apis/credentials?project=[PROJECT_ID]
+# Option #2:
 gcloud projects add-iam-policy-binding [PROJECT_ID] --member "serviceAccount:[NAME]@[PROJECT_ID].iam.gserviceaccount.com" --role "roles/owner"
 gcloud iam service-accounts keys create [KEY_NAME].json --iam-account [NAME]@[PROJECT_ID].iam.gserviceaccount.com
 
