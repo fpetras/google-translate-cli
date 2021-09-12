@@ -18,7 +18,9 @@ def translate_text(text, target_language):
         sys.exit()
     try:
         translator = Translator()
+        # I see the bug occurs in this line ----
         source = translator.detect(text)
+        # --------------------------------------
         translation = translator.translate(text, dest=target_language)
         if opt_c == True:
             print('Detected language confidence: '),
