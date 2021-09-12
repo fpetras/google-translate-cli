@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import HTMLParser
+#import HTMLParser
+from html.parser import HTMLParser
 
 def decode(string):
 	decode = HTMLParser.HTMLParser()
