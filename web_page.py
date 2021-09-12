@@ -1,6 +1,6 @@
 import os
 import sys
-import urllib2
+import urllib3
 from timeout import *
 from language_to_iso import lang_to_iso
 from helpers import valid_lang
